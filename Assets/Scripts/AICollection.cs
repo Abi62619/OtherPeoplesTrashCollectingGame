@@ -5,12 +5,18 @@ public class AICollection : MonoBehaviour
 {
     public NavMeshAgent Robot;
     public Transform DropOff;
+    public GameObject DropOffObject;
 
     public float collectRadius = 0.5f; // distance considered "collected"
     public float dropOffRadius = 1f;   // distance considered "at drop-off"
 
     private bool goingToDropOff;
 
+    private void Awake()
+    {
+        DropOffObject = GameObject.FindGameObjectWithTag("Finish");
+        DropOff = DropOffObject.transform;
+    }
     void Update()
     {
         if (Robot == null)

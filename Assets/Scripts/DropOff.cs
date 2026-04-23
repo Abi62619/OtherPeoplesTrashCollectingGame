@@ -7,7 +7,7 @@ public class DropOff : MonoBehaviour
     public Transform DropOffLocation;
     public TMP_Text pointsTxt;
 
-    public int points;
+    public static int points;
 
     // Instantiate the prefab when any collider enters this object's trigger,
     // then destroy the instantiated object after 2 seconds.
