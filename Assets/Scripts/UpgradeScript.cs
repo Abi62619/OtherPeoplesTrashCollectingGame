@@ -1,16 +1,15 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class UpgradeScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public GameObject CollectorAi;
+
+    public float speedIncrease;
+    public void Btn1Press()
     {
-        
+        CollectorAi.GetComponent<NavMeshAgent>().speed += speedIncrease;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
