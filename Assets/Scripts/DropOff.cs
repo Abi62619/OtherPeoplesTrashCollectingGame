@@ -1,9 +1,13 @@
 using UnityEngine;
+using TMPro;
 
 public class DropOff : MonoBehaviour
 {
     public GameObject DropOffPrefab;
     public Transform DropOffLocation;
+    public TMP_Text pointsTxt;
+
+    public int points;
 
     // Instantiate the prefab when any collider enters this object's trigger,
     // then destroy the instantiated object after 2 seconds.
@@ -15,5 +19,7 @@ public class DropOff : MonoBehaviour
         Vector3 spawnPos = DropOffLocation != null ? DropOffLocation.position : transform.position;
         GameObject spawned = Instantiate(DropOffPrefab, spawnPos, Quaternion.identity);
         Destroy(spawned, 2f); // remove the spawned object after 2 seconds
+        points += 1;
+        pointsTxt.text = (points).ToString();
     }
 }
